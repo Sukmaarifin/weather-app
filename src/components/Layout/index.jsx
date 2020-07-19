@@ -3,7 +3,9 @@ import React from 'react';
 const Layout = ({ children }) => {
   return (
     <React.Fragment>
-      {children}
+      <div style={{padding: '50px', textAlign: 'left'}}>
+        {children}
+      </div>
     </React.Fragment>
   )
 }

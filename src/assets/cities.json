@@ -1,4 +1,6 @@
-[ { "label": "Aceh Barat", "value": "Aceh Barat" },
+[
+  { "label": "Jakarta", "value": "Jakarta" },
+  { "label": "Aceh Barat", "value": "Aceh Barat" },
     { "label": "Aceh Barat Daya", "value": "Aceh Barat Daya" },
     { "label": "Aceh Besar", "value": "Aceh Besar" },
     { "label": "Aceh Jaya", "value": "Aceh Jaya" },

@@ -1,33 +1,26 @@
 import React from 'react';
-import { PageHeader, Input, AutoComplete, Table, Divider } from 'antd';
-import cities from '../../assets/cities.json';
+import { PageHeader, Table, Divider } from 'antd';
 import useHome from './helpers';
+import AutoComplete from '../../components/AutoComplete';
 
 const Home = () => {
-
-  const {columns, weaters, city, handleChangeCity} = useHome();
+  const {loading, columns, weaters, onHandleSearchWeather } = useHome();
 
   return (
     <React.Fragment>
-      <div>
-        <PageHeader
-          className="site-page-header"
-          title="Weather App"
-        />
-      </div>
+      <PageHeader
+        className="site-page-header"
+        title="Weather App"
+      />
+      
       <div style={{ padding: '0px 24px'}}>
-        <AutoComplete
-          style={{ textAlign: 'left' }}
-          options={cities}
-        >
-          <Input.Search
-            size="large"
-            placeholder="Search City"
-            value={city}
-            onChange={e => handleChangeCity(e)}/>
-        </AutoComplete>
+        <AutoComplete onHandleSearchWeather={onHandleSearchWeather} />
         <Divider/>
-        <Table columns={columns} dataSource={weaters} pagination={false} />
+        <Table
+          loading={loading}
+          columns={columns}
+          dataSource={weaters}
+          pagination={false} />
       </div>
     </React.Fragment>
   )
