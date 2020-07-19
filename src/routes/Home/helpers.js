@@ -28,8 +28,9 @@ const useHome = () => {
   const onHandleSearchWeather = (e) => {
     setLoading(true);
     setSelectedCity(e);
-    axios.get(`${REACT_APP_API_URL}/forecast?q=${e}&mode=json&units=metric&appid=${REACT_APP_API_KEY}`)
+    axios.get(`${REACT_APP_API_URL}/forecast?q=${e}&units=metric&appid=${REACT_APP_API_KEY}`)
     .then(res => {
+      
       //grouping wather by date
       let weatherDate = {};
       res.data.list.forEach(item => {
@@ -82,6 +83,7 @@ const useHome = () => {
       setWeaters(tempWeather);
     })
     .catch(err => {
+      console.log('-- err', err)
       setWeaters([]);
     })
     .finally(() =>{
